@@ -1,10 +1,10 @@
-const typingElement = document.querySelector(".hero h2");
+const typingElement = document.querySelector(".hero-text h2");
 
 const typingTexts = [
-    "Student & Creative Digital Enthusiast",
-    "Web Developer in Progress",
-    "Creative Designer",
-    "Technology Enthusiast"
+    "Student | Web Developer | Designer",
+    "Creative Digital Enthusiast",
+    "Technology Enthusiast",
+    "Future Web Developer"
 ];
 
 let textIndex = 0;
@@ -12,25 +12,19 @@ let charIndex = 0;
 let deleting = false;
 
 function typingEffect() {
-    if (!typingElement) return;
-
     const currentText = typingTexts[textIndex];
 
     if (!deleting) {
-        typingElement.textContent =
-            currentText.substring(0, charIndex + 1);
-
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
         charIndex++;
 
         if (charIndex === currentText.length) {
             deleting = true;
-            setTimeout(typingEffect, 1800);
+            setTimeout(typingEffect, 1500);
             return;
         }
     } else {
-        typingElement.textContent =
-            currentText.substring(0, charIndex - 1);
-
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
         charIndex--;
 
         if (charIndex === 0) {
@@ -43,7 +37,7 @@ function typingEffect() {
         }
     }
 
-    setTimeout(typingEffect, deleting ? 45 : 80);
+    setTimeout(typingEffect, deleting ? 50 : 80);
 }
 
 typingEffect();
