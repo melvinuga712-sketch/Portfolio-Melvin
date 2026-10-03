@@ -1,20 +1,5 @@
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", function (e) {
-    const target = document.querySelector(this.getAttribute("href"));
-
-    if (target) {
-      e.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
-});
-
 // Typing animation
-const typingElement = document.querySelector("h2");
+const typingElement = document.querySelector(".hero-text h2");
 const typingText = "Student | Web Developer | Designer";
 
 let typingIndex = 0;
